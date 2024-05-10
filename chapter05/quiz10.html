@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <h1>여름방학 특강 신청</h1>
+    <fieldset>
+      <legend><strong>수강과목</strong></legend>
+      <blockquote style="color: green">
+        영어회화(초급)
+        <input type="text" value="오전 9:00~11:00" readonly>
+      </blockquote>
+    </fieldset>
+  </form>
+  <form>
+    <fieldset>
+      <legend><strong>신청자</strong></legend>
+      <blockquote style="color: green">
+        이름
+        <input type="text" autofocus>
+      </blockquote>
+      <blockquote style="color: green">
+        학번
+        <input type="text" placeholder="하이폰없이 입력">
+      </blockquote>
+      <blockquote style="color: green">
+        학과
+        <select>
+          <option>컴퓨터공학과</option>
+        </select>
+      </blockquote>
+    </fieldset>
+  </form>
+  <form>
+    <fieldset>
+      <legend><strong>교재 주문</strong></legend>
+      <blockquote style="color: green">
+        교재
+        <input type="text" value="1" readonly>
+      </blockquote>
+      <blockquote style="color: green">
+        워크시트
+        <input type="text" value="1" readonly>
+      </blockquote>
+      <blockquote style="color: green">
+        단체주문
+        <input type="text" min="10" max="100" step="10">
+      </blockquote>
+    </fieldset>
+    <br>
+    <form>
+      <fieldset>
+        <input type="submit" value="신청하기">
+        <input type="reset" value="다시쓰기">
+      </fieldset>
+    </form>
+  </form>
+</body>
+</html>
