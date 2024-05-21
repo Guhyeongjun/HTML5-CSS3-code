@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gradient Menu</title>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const navItems = document.querySelectorAll("ul.navi li");
+  navItems.forEach((li, index) => {
+    // 기본 스타일 설정
+    li.style.listStyleType = "none";
+    li.style.display = "block";
+    li.style.width = "8em";
+    li.style.height = "3em";
+    li.style.float = "left";
+    li.style.textAlign = "center";
+    li.style.fontFamily = "\"Lucida Grande\", sans-serif";
+    li.style.border = "1px #818181 solid";
+    li.style.boxShadow = "1px 1px 1px #bbb";
+
+    // 메뉴 링크 스타일 설정
+    const link = li.querySelector("a");
+    link.style.display = "block";
+    link.style.padding = ".8em .5em .5em .5em";
+    link.style.textDecoration = "none";
+    link.style.color = "#292929";
+    link.style.textShadow = "1px 1px 0px #cccccc";
+
+    // 마우스 오버 시 스타일 변경
+    li.addEventListener("mouseover", function() {
+      li.style.backgroundColor = "#333333";
+      link.style.color = "#FFF";
+      link.style.textShadow = "0px 1px 0px #fff";
+    });
+
+    li.addEventListener("mouseout", function() {
+      li.style.backgroundColor = "";
+      link.style.color = "#292929";
+      link.style.textShadow = "1px 1px 0px #cccccc";
+    });
+
+    // 첫번째 항목의 스타일 설정
+    if (index === 0) {
+      li.style.borderTopLeftRadius = "1em";
+      li.style.borderBottomLeftRadius = "1em";
+    }
+
+    // 마지막 항목의 스타일 설정
+    if (index === navItems.length - 1) {
+      li.style.borderTopRightRadius = "1em";
+      li.style.borderBottomRightRadius = "1em";
+    }
+  });
+});
+</script>
+</head>
+
+<body>
+<div>
+  <ul class="navi"> 
+    <li class="home"><a href="#">Home</a></li> 
+    <li id="html"><a href="#">HTML5</a></li> 
+    <li id="css"><a href="#">CSS3</a></li> 
+    <li id="jquery"><a href="#">JQuery</a></li> 
+  </ul> 
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+		<h1></h1>
+		<table border="1">
+			<tr>
+				<td>블루베리</td>
+			</tr>
+			<tr>
+				<td>귀리</td>
+			</tr>
+			<tr>
+				<td>토마토</td>
+			</tr>
+			<tr>
+				<td>시금치</td>
+			</tr>
+			<tr>
+				<td>적포도주</td>
+			</tr>
+			<tr>
+				<td>견과류</td>
+			</tr>
+			<tr>
+				<td>브로콜리</td>
+			</tr>
+			<tr>
+				<td>연어</td>
+			</tr>
+			<tr>
+				<td>마늘</td>
+			</tr>
+			<tr>
+				<td>녹차</td>
+			</tr>
+		</table>
+	</div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const header = document.querySelector("h1");
+      header.textContent = "건강에 좋은 건강 식품";
+    });
+    const table = document.querySelector("table");
+        table.style.width = "200px";
+        table.style.margin = "0 auto";
+        table.style.borderCollapse = "collapse";
+    const tds = document.querySelectorAll("td");
+        tds.forEach(td => {
+            td.style.textAlign = "left";
+            td.style.padding = "10px";
+            td.style.paddingLeft = "20px";
+        });
+  </script>
+</body>
+</html>
