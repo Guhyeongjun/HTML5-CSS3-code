@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 캐릭터 생성</title>
+</head>
+<body>
+    <h1>게임 캐릭터 생성</h1>
+    <input id="character-name" placeholder="캐릭터 이름">
+    <select id="character-class">
+        <option value="전사">전사</option>
+        <option value="마법사">마법사</option>
+        <option value="도적">도적</option>
+    </select>
+    <button id="add-button">추가하기</button>
+    <div id="character-list"></div>
+
+    <script>
+        // 문서 객체를 가져옵니다
+        const nameInput = document.querySelector("#character-name");
+        const classSelect = document.querySelector("#character-class");
+        const characterList = document.querySelector("#character-list");
+        const addButton = document.querySelector("#add-button");
+        let keyCount = 0;
+
+        // 캐릭터를 추가하는 함수
+        const addCharacter = () => {
+            // 공백 입력 체크
+            if (nameInput.value.trim().length <= 0) {
+                alert("캐릭터 이름을 입력해주세요.");
+                return;
+            }
+
+            // 캐릭터 객체 만들기
+            const item = document.createElement("div");
+            const name = document.createElement("span");
+            const charClass = document.createElement("span");
+            const button = document.createElement("button");
+
+            // 캐릭터 객체들의 속성 추가
+            name.textContent = nameInput.value;
+            charClass.textContent = ` (${classSelect.value})`;
+            nameInput.value = "";
+            button.textContent = "제거하기";
+            item.setAttribute("data-key", keyCount++);
+
+            item.appendChild(name);
+            item.appendChild(charClass);
+            item.appendChild(button);
+
+            characterList.appendChild(item);
+
+            // 캐릭터를 제거하는 함수
+            button.addEventListener("click", () => {
+                characterList.removeChild(item);
+            });
+        };
+
+        // 추가하기 버튼이 클릭됐을 때
+        addButton.addEventListener("click", addCharacter);
+    </script>
+</body>
+</html>

@@ -6,7 +6,6 @@
     <title>Naver Signup Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,6 +42,17 @@
         .signup-form button:hover {
             background-color: #369932;
         }
+        .male-form {
+          background-color: rgb(255, 255, 255);
+          padding: 20px;
+          border-radius: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          width: 270px;
+          margin-bottom: 10px;
+        }
+        .signup-form label {
+          font-size: 15px;
+        }
     </style>
 </head>
 <body>
@@ -54,14 +64,13 @@
             <input type="email" name="email" placeholder="[선택] 이메일주소">
             <input type="text" name="name" placeholder="이름" required>
             <input type="text" name="birthdate" placeholder="생년월일 8자리" required>
-            <div>
-                <label><input type="radio" name="gender" value="male"> 남자</label>
-                <label><input type="radio" name="gender" value="female"> 여자</label>
-                <label><input type="radio" name="gender" value="none"> 선택안함</label>
+            <div class="male-form">
+                <label><input type="radio" name="gender" value="male">남자</label>
+                <label><input type="radio" name="gender" value="female">여자</label>
+                <label><input type="radio" name="gender" value="none">선택안함</label>
             </div>
             <select name="country_code">
                 <option value="+82">대한민국 +82</option>
-                <!-- 다른 국가 코드 추가 가능 -->
             </select>
             <input type="tel" name="phone" placeholder="휴대전화번호" required>
             <button type="submit">인증요청</button>
