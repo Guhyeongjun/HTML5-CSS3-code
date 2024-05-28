@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 캐릭터 생성</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url(images/futuristic-home-8397004_1920.jpg);
+        background-color: #f4f4f4;
+        background-size: cover;
+        background-position: center; /* 이미지를 화면 중앙에 위치시킵니다 */
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    input[type="text"], select {
+        margin-top: 5px;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    .gender-group {
+        display: flex;
+        align-items: center;
+        margin-top: 3px;
+    }
+
+    .gender-group input[type="radio"] {
+        margin: 10px 5px 0 0;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #5cb85c;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #4cae4c;
+    }
+
+    #character-display {
+        margin-top: 20px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Character</h1>
+        <form id="character-form">
+            <label for="name">캐릭터 이름</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="race">서버</label>
+            <select id="race" name="race" required>
+                <option value="전사">서버1</option>
+                <option value="궁수">서버2</option>
+                <option value="도적">서버3</option>
+                <option value="마법사">서버4</option>
+            </select>
+
+            <label for="class">직업</label>
+            <select id="class" name="class" required>
+                <option value="warrior">전사</option>
+                <option value="mage">마법사</option>
+                <option value="rogue">도적</option>
+                <option value="priest">궁수</option>
+            </select>
+
+            <label>성별:</label>
+            <div class="gender-group">
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">남성</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">여성</label>
+            </div>
+
+            <button type="submit">캐릭터 생성</button>
+        </form>
+        <div id="character-display"></div>
+    </div>
+    <script>
+        document.getElementById('character-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const race = document.getElementById('race').value;
+        const classType = document.getElementById('class').value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+
+        const characterDisplay = document.getElementById('character-display');
+        characterDisplay.innerHTML = `
+            <h2>Character Created</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Race:</strong> ${race}</p>
+            <p><strong>Class:</strong> ${classType}</p>
+            <p><strong>Gender:</strong> ${gender}</p>
+        `;
+    });
+    </script>
+</body>
+</html>

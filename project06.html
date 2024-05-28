@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>날씨 예보</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .page-header {
+      background-color: #5c7eaa;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 0;
+      gap: 15px;
+    }
+
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      transition: background 0.3s ease;
+    }
+
+    .main-nav a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    #weather-info {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+
+    #weather-image {
+      margin-bottom: 20px;
+    }
+
+    #weather-image img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    #weather-description {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <h1>주간 날씨 예보</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#monday" onclick="showWeather('monday')">월요일</a></li>
+        <li><a href="#tuesday" onclick="showWeather('tuesday')">화요일</a></li>
+        <li><a href="#wednesday" onclick="showWeather('wednesday')">수요일</a></li>
+        <li><a href="#thursday" onclick="showWeather('thursday')">목요일</a></li>
+        <li><a href="#friday" onclick="showWeather('friday')">금요일</a></li>
+        <li><a href="#saturday" onclick="showWeather('saturday')">토요일</a></li>
+        <li><a href="#sunday" onclick="showWeather('sunday')">일요일</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="weather-info">
+      <h2>원하는 요일을 선택하세요.</h2>
+      <div id="weather-image">
+        <img src="images/clouds-8459053_1920.jpg" alt="날씨 이미지" id="weather-img">
+      </div>
+      <div id="weather-description">
+        <p>요일별 날씨가 표시됩니다.</p>
+      </div>
+    </section>
+  </main> 
+  <script>
+    function showWeather(day) {
+      const weatherInfo = {
+        monday: {
+          img: 'images/캡처1.png',
+          description: '월요일 서울의 날씨는 구름많음 입니다.'
+        },
+        tuesday: {
+          img: 'images/캡처2.png',
+          description: '화요일 서울의 날씨는 흐립니다.'
+        },
+        wednesday: {
+          img: 'images/캡처3.png',
+          description: '수요일 서울의 날씨는 흐립니다.'
+        },
+        thursday: {
+          img: 'images/캡처4.png',
+          description: '목요일의 춘천의 날씨는 맑습니다.'
+        },
+        friday: {
+          img: 'images/캡처5.png',
+          description: '금요일의 강릉의 날씨는 비가 내립니다.'
+        },
+        saturday: {
+          img: 'images/캡처6.png',
+          description: '토요일의 날씨는 전국적으로 구름이 많습니다.'
+        },
+        sunday: {
+          img: 'images/캡처7.png',
+          description: '일요일의 날씨는 전국적으로 맑습니다.'
+        }
+      };
+
+      document.getElementById('weather-img').src = weatherInfo[day].img;
+      document.getElementById('weather-description').innerText = weatherInfo[day].description;
+    }
+  </script>
+</body>
+</html>
