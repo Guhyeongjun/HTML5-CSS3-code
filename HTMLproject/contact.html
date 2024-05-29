@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고객센터</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .faq-section {
+        margin-bottom: 30px;
+    }
+
+    .faq-item {
+        margin-bottom: 10px;
+    }
+
+    .faq-question {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #eee;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        border-top: none;
+    }
+
+    .faq-question:hover {
+        background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1>고객센터 - 자주 묻는 질문</h1>
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question">Q1. 강의 수강 방법은?</div>
+          <div class="faq-answer">강의를 수강하려면, 먼저 로그인한 후 원하는 강의를 클릭하여 수강신청을 완료하십시오.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q2. 결제 방법은?</div>
+          <div class="faq-answer">다양한 결제 방법을 지원합니다. 신용카드, 계좌이체, 모바일 결제 등을 이용할 수 있습니다.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q3. 환불 정책은?</div>
+          <div class="faq-answer">환불 정책은 각 강의마다 다를 수 있습니다. 자세한 내용은 강의 상세 페이지를 참조하십시오.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = event.target.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강사 소개</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .instructors {
+        padding: 20px;
+        background-color: white;
+    }
+
+    .instructor-list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .instructor-item {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .instructor-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .instructor-item a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .instructor-item a:hover {
+        color: #5cb85c;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="instructors">
+        <h1 style="text-align: center;">강사 소개</h1>
+        <div class="instructor-list">
+            <div class="instructor-item">
+                    <img src="images/11.png" alt="강사 이미지 1">
+                    <h3>프로도</h3>
+                    <p>스프링 전문가</p>
+            </div>
+            <div class="instructor-item">
+                    <img src="images/12.jpg" alt="강사 이미지 2">
+                    <h3>네오</h3>
+                    <p>HTTP 웹 전문가</p>
+            </div>
+            <div class="instructor-item">                
+                    <img src="images/13.png" alt="강사 이미지 3">
+                    <h3>튜브</h3>
+                    <p>CI/CD 전문가</p>               
+            </div>
+            <div class="instructor-item">
+                    <img src="images/14.png" alt="강사 이미지 3">
+                    <h3>어피치</h3>
+                    <p>파이썬 전문가</p>
+            </div>
+            <div class="instructor-item">
+                    <img src="images/15.png" alt="강사 이미지 3">
+                    <h3>무지</h3>
+                    <p>자바 전문가</p>
+            </div>
+            <div class="instructor-item">
+                    <img src="images/16.jpg" alt="강사 이미지 3">
+                    <h3>콘</h3>
+                    <p>DB 전문가</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

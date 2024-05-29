@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .notice-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notice-item {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .notice-item:last-child {
+        border-bottom: none;
+    }
+
+    .notice-item a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+    }
+
+    .notice-item a:hover {
+        color: #5cb85c;
+    }
+
+    .notice-date {
+        font-size: 0.9em;
+        color: #888;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1>공지사항</h1>
+      <ul class="notice-list">
+        <li class="notice-item">
+          <a href="https://www.inflearn.com/notices/1267627">
+            <div>새로운 강의가 추가되었습니다!</div>
+            <div class="notice-date">2024-05-01</div>
+          </a>
+        </li>
+        <li class="notice-item">
+          <a href="https://www.inflearn.com/notices/1200152">
+            <div>시스템 점검 안내</div>
+            <div class="notice-date">2024-04-15</div>
+          </a>
+        </li>
+        <li class="notice-item">
+          <a href="https://www.inflearn.com/notices/1093620">
+            <div>2024년 상반기 결산 보고</div>
+            <div class="notice-date">2024-04-01</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
